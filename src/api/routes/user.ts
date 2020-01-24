@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import middlewares from '../middlewares';
 import { Container } from 'typedi';
 import DueService from '../../services/due';
+import { IUser } from '../../interfaces/IUser';
 
 const route = Router();
 
@@ -14,7 +15,7 @@ export default (app: Router) => {
 
   route.get('/dues', middlewares.isAuth, middlewares.attachCurrentUser, async (req: Request, res: Response) => {
     const dueServiceInstance = Container.get(DueService);
-    const { dues } = await dueServiceInstance.listDues(req.currentUser as User);
+    const { dues } = await dueServiceInstance.listDues(req.currentUser as IUser);
     return res.json(dues).status(200);
   });
 };

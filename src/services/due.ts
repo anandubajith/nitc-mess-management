@@ -1,5 +1,7 @@
 import { Service, Inject } from 'typedi';
 import MailerService from './mailer';
+import { IUser } from '../interfaces/IUser';
+import { IDue } from '../interfaces/IDue';
 import config from '../config';
 import argon2 from 'argon2';
 import { randomBytes } from 'crypto';
@@ -15,7 +17,7 @@ export default class DueService {
     @EventDispatcher() private eventDispatcher: EventDispatcherInterface,
   ) {}
 
-  public async addDue(due: Due): Promise<{ message: string }> {
+  public async addDue(due: IDue): Promise<{ message: string }> {
     try {
       this.logger.silly(due);
       const dueRecord = await this.dueModel.create({
@@ -30,7 +32,7 @@ export default class DueService {
     }
     return { message: 'Save success' };
   }
-  public async listDues(user: User): Promise<{ dues: any[] }> {
+  public async listDues(user: IUser): Promise<{ dues: any[] }> {
     // this.logger.info(JSON.stringify(user));
     const dues = await this.dueModel.find({ rollNumber: user.rollNumber });
     return { dues };

@@ -11,10 +11,10 @@ import events from '../subscribers/events';
 @Service()
 export default class AuthService {
   constructor(
-      @Inject('userModel') private userModel : Models.UserModel,
-      private mailer: MailerService,
-      @Inject('logger') private logger,
-      @EventDispatcher() private eventDispatcher: EventDispatcherInterface,
+    @Inject('userModel') private userModel: Models.UserModel,
+    private mailer: MailerService,
+    @Inject('logger') private logger,
+    @EventDispatcher() private eventDispatcher: EventDispatcherInterface,
   ) {}
 
   public async SignUp(userInputDTO: IUserInputDTO): Promise<{ user: IUser; token: string }> {

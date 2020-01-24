@@ -1,6 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import middlewares from '../middlewares';
 import { Container } from 'typedi';
+import { IDue } from '../../interfaces/IDue';
 import { celebrate, Joi } from 'celebrate';
 import DueService from '../../services/due';
 const route = Router();
@@ -22,7 +23,7 @@ export default (app: Router) => {
     middlewares.isAdmin,
     async (req: Request, res: Response) => {
       const dueServiceInstance = Container.get(DueService);
-      const { message } = await dueServiceInstance.addDue(req.body as Due);
+      const { message } = await dueServiceInstance.addDue(req.body as IDue);
       return res.json({ success: message }).status(200);
     },
   );
