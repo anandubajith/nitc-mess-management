@@ -1,0 +1,46 @@
+@url = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUwNTc2MjIuMzExLCJpYXQiOjE1Nzk4NzM2MjJ9.c_f-CPfVrMQ1aoTyrioNYEqJhR6ob7vgERBJlZNf-8s
+
+###
+# API 
+###
+POST {{url}}/api/auth/signup
+Content-Type: application/json
+
+{
+    "name": "anandu",
+    "email": "reach2anandu@gmail.com",
+    "password": "password",
+    "rollNumber" : "B180288cs"
+}
+
+
+###
+
+POST {{url}}/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "reach2anandu@gmail.com",
+    "password": "password"
+}
+
+###
+GET {{url}}/api/users/me
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/api/users/dues
+Authorization: Bearer {{token}}
+
+### 
+POST {{url}}/api/dues/add
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "rollNumber": "b180288Cs",
+    "message": "Diet Coke", 
+    "amount": 80
+}
+
