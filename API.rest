@@ -40,7 +40,7 @@ Content-Type: application/json
 
 {
     "rollNumber": "b180288Cs",
-    "message": "Diet Coke", 
+    "message": "Juice", 
     "amount": 80
 }
 

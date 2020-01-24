@@ -7,6 +7,7 @@
 - Signup/login
 - Add/List dues
 
-## Todo
+## What needs to be fixed
 
-- Add admin role, middleware
+- Add MongoDB aggregate field for totalDues
+- add admin dataview endpoint
