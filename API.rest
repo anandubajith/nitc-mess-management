@@ -1,5 +1,5 @@
-@url = http://localhost:3000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUwNTc2MjIuMzExLCJpYXQiOjE1Nzk4NzM2MjJ9.c_f-CPfVrMQ1aoTyrioNYEqJhR6ob7vgERBJlZNf-8s
+@url = https://nitc-mess.herokuapp.com
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiMTM2Njc1MTAzYTAwMDQ2OGI2Y2EiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUwNjUzNDUuNzI2LCJpYXQiOjE1Nzk4ODEzNDV9.aBOs1xLX3p5r4_3nfmuFbJAVXits__KmJ5WIbOIxNNs
 
 ###
 # API 
