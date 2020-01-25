@@ -21,12 +21,15 @@ export default class UserService {
     const userRecord = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $set: { mess: data.mess } });
     return 'success';
   }
+  public async getRegisteredMess(rollNumber): Promise<string> {
+    const res = await this.userModel.findOne({ rollNumber });
+    return res.mess || null;
+  }
   public async listPeopleWithoutMess(): Promise<any[]> {
     const res = await this.userModel.find({ mess: null }, { _id: 0, name: 1, rollNumber: 1, email: 1 });
     return res;
   }
   public async removeMess(data): Promise<string> {
-    // if ( the current admin users mess is the same )
     let r = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $unset: { mess: null } });
     return 'Success';
   }

@@ -5,6 +5,7 @@ export interface IUser {
   rollNumber: string;
   password: string;
   salt: string;
+  mess: string;
 }
 
 export interface IUserInputDTO {

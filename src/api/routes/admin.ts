@@ -8,6 +8,7 @@ import { celebrate, Joi } from 'celebrate';
 import DueService from '../../services/due';
 import AuthService from '../../services/auth';
 import UserService from '../../services/user';
+import user from './user';
 const route = Router();
 
 export default (app: Router) => {
@@ -55,8 +56,11 @@ export default (app: Router) => {
     middlewares.attachCurrentUser,
     middlewares.isAdmin,
     async (req: Request, res: Response) => {
-      // get the corresponding user and updateMess Property
       const userServiceInstance = Container.get(UserService);
+      const targetUsersMess = userServiceInstance.getRegisteredMess(req.body.rollNumber);
+      if (req.currentUser.mess != (await targetUsersMess))
+        res.send('Can only update the people registerd in the mess').status(401);
+
       const messsage = await userServiceInstance.removeMess(req.body);
       res.send(messsage);
     },
