@@ -40,8 +40,21 @@ export default class DueService {
     return { dues };
   }
   public async listAllDues(): Promise<{ data: any[] }> {
+    // TODO: optimize this query
     let data = await this.dueModel.aggregate([
       { $group: { _id: '$rollNumber', total: { $sum: '$amount' } } },
+      {
+        $lookup: {
+          from: 'users',
+          localField: '_id',
+          foreignField: 'rollNumber',
+          as: 'name',
+        },
+      },
+      {
+        $replaceRoot: { newRoot: { $mergeObjects: [{ $arrayElemAt: ['$name', 0] }, '$$ROOT'] } },
+      },
+      { $project: { name: 0, salt: 0, password: 0, __v: 0, createdAt: 0, updatedAt: 0, role: 0, _id: 0 } },
       { $sort: { total: -1 } },
     ]);
     return { data };
