@@ -4,7 +4,6 @@ import user from './routes/user';
 import due from './routes/due';
 import agendash from './routes/agendash';
 import admin from './routes/admin';
-// import due from '../models/due';
 
 // guaranteed to get dependencies
 export default () => {
