@@ -20,6 +20,7 @@ export default class DueService {
   ) {}
 
   public async addDue(due: IDue): Promise<{ message: string }> {
+    // check if the User belong's to the admins mess
     try {
       this.logger.silly(due);
       const dueRecord = await this.dueModel.create({
