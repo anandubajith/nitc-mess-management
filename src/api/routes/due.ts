@@ -1,5 +1,7 @@
 import { Router, Request, Response } from 'express';
 import middlewares from '../middlewares';
+const ObjectID = require('mongodb').ObjectID;
+type ObjectID = typeof import('mongodb').ObjectID;
 import { Container } from 'typedi';
 import { IDue } from '../../interfaces/IDue';
 import { celebrate, Joi } from 'celebrate';

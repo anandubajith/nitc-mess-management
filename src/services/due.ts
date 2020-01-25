@@ -2,6 +2,8 @@ import { Service, Inject } from 'typedi';
 import MailerService from './mailer';
 import { IUser } from '../interfaces/IUser';
 import { IDue } from '../interfaces/IDue';
+const ObjectID = require('mongodb').ObjectID;
+type ObjectID = typeof import('mongodb').ObjectID;
 import config from '../config';
 import argon2 from 'argon2';
 import { randomBytes } from 'crypto';

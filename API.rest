@@ -1,4 +1,4 @@
-@url = http://localhost:3000
+@url = http://nitc-mess.anandu.net
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
 @adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
 ###
