@@ -22,7 +22,7 @@ export default class UserService {
     return 'success';
   }
   public async listPeopleWithoutMess(): Promise<any[]> {
-    const res = await this.userModel.find({ mess: -1 }, { _id: 0, name: 1, rollNumber: 1, email: 1 });
+    const res = await this.userModel.find({ mess: null }, { _id: 0, name: 1, rollNumber: 1, email: 1 });
     return res;
   }
   public async removeMess(data): Promise<string> {
