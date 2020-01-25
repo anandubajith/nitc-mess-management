@@ -36,6 +36,7 @@ export default (app: Router) => {
     }),
     middlewares.isAuth,
     middlewares.attachCurrentUser,
+    middlewares.isAdmin,
     async (req: Request, res: Response) => {
       const dueServiceInstance = Container.get(DueService);
       const { message } = await dueServiceInstance.removeDue(req.body._id as ObjectID);
