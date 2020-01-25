@@ -9,9 +9,9 @@ Content-Type: application/json
 
 {
     "name": "anandu",
-    "email": "reach2anandu@gmail.com",
+    "email": "reach2anandu+2@gmail.com",
     "password": "password",
-    "rollNumber" : "B180288cs"
+    "rollNumber" : "B180388cs"
 }
 
 ###
@@ -63,6 +63,22 @@ Content-Type: application/json
 
 ###
 GET {{url}}/api/dues/list
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+
+###
+POST {{url}}/api/admin/assign-mess
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+    "rollNumber": "B180288CS",
+    "mess": "P2"
+}
+
+###
+GET {{url}}/api/admin/list-people-without-mess
 Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 

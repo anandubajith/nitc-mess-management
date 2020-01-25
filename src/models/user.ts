@@ -23,6 +23,8 @@ const User = new mongoose.Schema(
       index: true,
     },
 
+    mess: String,
+
     password: String,
 
     salt: String,

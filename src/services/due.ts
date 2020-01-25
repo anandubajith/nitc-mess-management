@@ -48,13 +48,13 @@ export default class DueService {
           from: 'users',
           localField: '_id',
           foreignField: 'rollNumber',
-          as: 'name',
+          as: '_name',
         },
       },
       {
-        $replaceRoot: { newRoot: { $mergeObjects: [{ $arrayElemAt: ['$name', 0] }, '$$ROOT'] } },
+        $replaceRoot: { newRoot: { $mergeObjects: [{ $arrayElemAt: ['$_name', 0] }, '$$ROOT'] } },
       },
-      { $project: { name: 0, salt: 0, password: 0, __v: 0, createdAt: 0, updatedAt: 0, role: 0, _id: 0 } },
+      { $project: { _name: 0, salt: 0, password: 0, __v: 0, createdAt: 0, updatedAt: 0, role: 0, _id: 0 } },
       { $sort: { total: -1 } },
     ]);
     return { data };
