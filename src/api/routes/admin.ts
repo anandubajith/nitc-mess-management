@@ -57,7 +57,7 @@ export default (app: Router) => {
     async (req: Request, res: Response) => {
       // get the corresponding user and updateMess Property
       const userServiceInstance = Container.get(UserService);
-      const messsage = await userServiceInstance.removeMess(req);
+      const messsage = await userServiceInstance.removeMess(req.body);
       res.send(messsage);
     },
   );

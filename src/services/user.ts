@@ -26,9 +26,7 @@ export default class UserService {
     return res;
   }
   public async removeMess(data): Promise<string> {
-    // let r = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $set: { mess: '-1' } });
-    // console.log(r);
-    // @TODO: fix this
-    return 'not implemented';
+    let r = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $unset: { mess: null } });
+    return 'Success';
   }
 }
