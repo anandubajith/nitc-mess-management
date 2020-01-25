@@ -36,7 +36,7 @@ export default (app: Router) => {
     middlewares.isAdmin,
     async (req: Request, res: Response) => {
       const dueServiceInstance = Container.get(DueService);
-      const { data } = await dueServiceInstance.listAllDues();
+      const { data } = await dueServiceInstance.listAllDues(req.currentUser.mess);
       return res.json(data);
     },
   );

@@ -39,7 +39,7 @@ export default class DueService {
     const dues = await this.dueModel.find({ rollNumber: user.rollNumber });
     return { dues };
   }
-  public async listAllDues(): Promise<{ data: any[] }> {
+  public async listAllDues(messName: string): Promise<{ data: any[] }> {
     // @TODO: optimize this query
     let data = await this.dueModel.aggregate([
       { $group: { _id: '$rollNumber', total: { $sum: '$amount' } } },
@@ -56,6 +56,7 @@ export default class DueService {
       },
       { $project: { _name: 0, salt: 0, password: 0, __v: 0, createdAt: 0, updatedAt: 0, role: 0, _id: 0 } },
       { $sort: { total: -1 } },
+      { $match: { mess: messName } },
     ]);
     return { data };
   }
