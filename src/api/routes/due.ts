@@ -29,6 +29,17 @@ export default (app: Router) => {
       return res.json({ success: message }).status(200);
     },
   );
+  route.get(
+    '/list',
+    middlewares.isAuth,
+    middlewares.attachCurrentUser,
+    middlewares.isAdmin,
+    async (req: Request, res: Response) => {
+      const dueServiceInstance = Container.get(DueService);
+      const { data } = await dueServiceInstance.listAllDues();
+      return res.json(data);
+    },
+  );
   route.delete(
     '/delete',
     celebrate({

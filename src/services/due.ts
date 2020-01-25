@@ -39,6 +39,13 @@ export default class DueService {
     const dues = await this.dueModel.find({ rollNumber: user.rollNumber });
     return { dues };
   }
+  public async listAllDues(): Promise<{ data: any[] }> {
+    let data = await this.dueModel.aggregate([
+      { $group: { _id: '$rollNumber', total: { $sum: '$amount' } } },
+      { $sort: { total: -1 } },
+    ]);
+    return { data };
+  }
   public async removeDue(id: ObjectID): Promise<{ message: string }> {
     try {
       this.logger.silly('Removing due');

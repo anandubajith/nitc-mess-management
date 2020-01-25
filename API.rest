@@ -1,6 +1,6 @@
-@url = http://nitc-mess.anandu.net
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
+@url = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE4MDMzLjU0OSwiaWF0IjoxNTc5OTM0MDMzfQ.ssuZf2smk8QeBXgQBVSi4AWYWclIbGwgqK3LuaezV4s
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE3OTk4LjUzMywiaWF0IjoxNTc5OTMzOTk4fQ.wyJmhfx2hue_yEOf80OV6URHzdIU1hRkiBvXIiJaMCg
 ###
 # API 
 ###
@@ -60,4 +60,10 @@ Content-Type: application/json
 {
     "_id": "5e2af5997e17082947798dd6"
 }
+
+###
+GET {{url}}/api/dues/list
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
 
