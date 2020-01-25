@@ -40,7 +40,7 @@ export default class DueService {
     return { dues };
   }
   public async listAllDues(): Promise<{ data: any[] }> {
-    // TODO: optimize this query
+    // @TODO: optimize this query
     let data = await this.dueModel.aggregate([
       { $group: { _id: '$rollNumber', total: { $sum: '$amount' } } },
       {
