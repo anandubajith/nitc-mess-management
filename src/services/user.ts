@@ -26,6 +26,7 @@ export default class UserService {
     return res;
   }
   public async removeMess(data): Promise<string> {
+    // if ( the current admin users mess is the same )
     let r = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $unset: { mess: null } });
     return 'Success';
   }
