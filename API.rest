@@ -1,6 +1,6 @@
 @url = https://nitc-mess.herokuapp.com
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiMTM2Njc1MTAzYTAwMDQ2OGI2Y2EiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUwNjUzNDUuNzI2LCJpYXQiOjE1Nzk4ODEzNDV9.aBOs1xLX3p5r4_3nfmuFbJAVXits__KmJ5WIbOIxNNs
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiMTM2Njc1MTAzYTAwMDQ2OGI2Y2EiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUxMDQ0MjIuMTk5LCJpYXQiOjE1Nzk5MjA0MjJ9.FP58N8Ompjjb48RlmKVOlvkiuP1rMtvJ2HjsKaxgqDg
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiYWNmMjEzOGI1NTAwMDRhZmYzNjIiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODUxMDQ3MTEuMjI1LCJpYXQiOjE1Nzk5MjA3MTF9.ad1G2z6Qa3EMFc_j5qiB3WKV4Yl_9_pVkv9xzq4hWnM
 ###
 # API 
 ###
@@ -12,6 +12,15 @@ Content-Type: application/json
     "email": "reach2anandu@gmail.com",
     "password": "password",
     "rollNumber" : "B180288cs"
+}
+
+###
+POST {{url}}/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin@anandu.net",
+    "password": "password"
 }
 
 
@@ -35,7 +44,7 @@ Authorization: Bearer {{token}}
 
 ### 
 POST {{url}}/api/dues/add
-Authorization: Bearer {{token}}
+Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
