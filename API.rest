@@ -1,6 +1,6 @@
-@url = https://nitc-mess.herokuapp.com
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiMTM2Njc1MTAzYTAwMDQ2OGI2Y2EiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJhbmFuZHUiLCJleHAiOjE1ODUxMDQ0MjIuMTk5LCJpYXQiOjE1Nzk5MjA0MjJ9.FP58N8Ompjjb48RlmKVOlvkiuP1rMtvJ2HjsKaxgqDg
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJiYWNmMjEzOGI1NTAwMDRhZmYzNjIiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODUxMDQ3MTEuMjI1LCJpYXQiOjE1Nzk5MjA3MTF9.ad1G2z6Qa3EMFc_j5qiB3WKV4Yl_9_pVkv9xzq4hWnM
+@url = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE1MDc5Ljg5NSwiaWF0IjoxNTc5OTMxMDc5fQ.SyLYyePSyPtfu4at-F3RDsvxbFO3V9GcGG_L4aMt7-M
 ###
 # API 
 ###
@@ -51,5 +51,13 @@ Content-Type: application/json
     "rollNumber": "b180288Cs",
     "message": "Juice", 
     "amount": 80
+}
+###
+DELETE {{url}}/api/dues/delete
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+    "_id": "5e2af5997e17082947798dd6"
 }
 

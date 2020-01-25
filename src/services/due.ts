@@ -37,4 +37,14 @@ export default class DueService {
     const dues = await this.dueModel.find({ rollNumber: user.rollNumber });
     return { dues };
   }
+  public async removeDue(id: ObjectID): Promise<{ message: string }> {
+    try {
+      this.logger.silly('Removing due');
+      const r = await this.dueModel.deleteOne({ _id: id });
+    } catch (e) {
+      this.logger.error(e);
+      throw e;
+    }
+    return { message: 'Delete success' };
+  }
 }
