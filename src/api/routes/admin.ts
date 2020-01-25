@@ -44,5 +44,23 @@ export default (app: Router) => {
     },
   );
 
+  route.delete(
+    '/remove-from-mess',
+    celebrate({
+      body: Joi.object({
+        rollNumber: Joi.string().required(),
+      }),
+    }),
+    middlewares.isAuth,
+    middlewares.attachCurrentUser,
+    middlewares.isAdmin,
+    async (req: Request, res: Response) => {
+      // get the corresponding user and updateMess Property
+      const userServiceInstance = Container.get(UserService);
+      const messsage = await userServiceInstance.removeMess(req);
+      res.send(messsage);
+    },
+  );
+
   // list all the users who does not have mess && is !admin
 };

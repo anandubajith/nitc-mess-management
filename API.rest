@@ -80,6 +80,12 @@ Content-Type: application/json
 ###
 GET {{url}}/api/admin/list-people-without-mess
 Authorization: Bearer {{adminToken}}
+
+###
+DELETE {{url}}/api/admin/remove-from-mess
+Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
-
+{
+    "rollNumber": "B180288CS"
+}
