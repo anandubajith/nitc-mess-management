@@ -1,6 +1,6 @@
-@url = http://localhost:3000
+@url = http://nitc-mess.anandu.net
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE4MDMzLjU0OSwiaWF0IjoxNTc5OTM0MDMzfQ.ssuZf2smk8QeBXgQBVSi4AWYWclIbGwgqK3LuaezV4s
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE3OTk4LjUzMywiaWF0IjoxNTc5OTMzOTk4fQ.wyJmhfx2hue_yEOf80OV6URHzdIU1hRkiBvXIiJaMCg
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTNkMTE4MDM5ZGFmODAwMDQ3YTQyOWUiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODYyNDQ4NjAuMDI1LCJpYXQiOjE1ODEwNjA4NjB9._fmYWaGx2-SlAhtFPcVlVYMg7COrPlMW41AK5_16Rdw
 ###
 # API 
 ###
@@ -8,10 +8,10 @@ POST {{url}}/api/auth/signup
 Content-Type: application/json
 
 {
-    "name": "anandu",
-    "email": "reach2anandu+2@gmail.com",
-    "password": "password",
-    "rollNumber" : "B180388cs"
+    "name": "Nirmal KV",
+    "email": "nikhil_b180283cs@nitc.ac.in",
+    "password": "b180283cs",
+    "rollNumber" : "B180283CS"
 }
 
 ###
@@ -48,9 +48,9 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "rollNumber": "b180288Cs",
-    "message": "Juice", 
-    "amount": 80
+    "rollNumber": "B160094CS",
+    "message": "Intial", 
+    "amount": 1
 }
 ###
 DELETE {{url}}/api/dues/delete
@@ -73,8 +73,8 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "rollNumber": "B180288CS",
-    "mess": "P2"
+    "rollNumber": "B180283CS",
+    "mess": "F"
 }
 
 ###

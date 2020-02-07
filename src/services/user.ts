@@ -29,6 +29,10 @@ export default class UserService {
     const res = await this.userModel.find({ mess: null }, { _id: 0, name: 1, rollNumber: 1, email: 1 });
     return res;
   }
+  public async listUsersOfMess(messName: string): Promise<any[]> {
+    const res = await this.userModel.find({ mess: messName }, { _id: 0, name: 1, rollNumber: 1, email: 1 });
+    return res;
+  }
   public async removeMess(data): Promise<string> {
     let r = await this.userModel.updateOne({ rollNumber: data.rollNumber }, { $unset: { mess: null } });
     return 'Success';

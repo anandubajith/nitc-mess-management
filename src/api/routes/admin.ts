@@ -32,6 +32,18 @@ export default (app: Router) => {
       res.send(messsage);
     },
   );
+
+  route.get(
+    '/list-people',
+    middlewares.isAuth,
+    middlewares.attachCurrentUser,
+    middlewares.isAdmin,
+    async (req: Request, res: Response) => {
+      const userServiceInstance = Container.get(UserService);
+      const result = await userServiceInstance.listUsersOfMess(req.currentUser.mess);
+      res.send(result);
+    },
+  );
   route.get(
     '/list-people-without-mess',
     middlewares.isAuth,
