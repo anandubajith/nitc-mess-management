@@ -3,4 +3,5 @@ export interface IDue {
   message: string;
   rollNumber: string;
   amount: number;
+  date: number;
 }

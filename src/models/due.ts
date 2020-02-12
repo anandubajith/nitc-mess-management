@@ -14,6 +14,8 @@ const Due = new mongoose.Schema(
     },
 
     amount: Number,
+
+    date: Number,
   },
   { timestamps: true },
 );

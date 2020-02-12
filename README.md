@@ -11,3 +11,5 @@
 
 - MessContractor should be able to add student to Mess
 - add admin dataview endpoint
+- When user joins mess, add MESS_AMOUNT for all the month
+- Reduce to extra, daily

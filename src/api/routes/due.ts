@@ -18,6 +18,7 @@ export default (app: Router) => {
         rollNumber: Joi.string().required(),
         amount: Joi.number().required(),
         message: Joi.string().required(),
+        date: Joi.number().required(),
       }),
     }),
     middlewares.isAuth,

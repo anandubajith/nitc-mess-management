@@ -1,6 +1,6 @@
-@url = http://nitc-mess.anandu.net
+@url = http://localhost:3000
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE4MDMzLjU0OSwiaWF0IjoxNTc5OTM0MDMzfQ.ssuZf2smk8QeBXgQBVSi4AWYWclIbGwgqK3LuaezV4s
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTNkMTE4MDM5ZGFmODAwMDQ3YTQyOWUiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODYyNDQ4NjAuMDI1LCJpYXQiOjE1ODEwNjA4NjB9._fmYWaGx2-SlAhtFPcVlVYMg7COrPlMW41AK5_16Rdw
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTQ0MmNkMWVhZTRjNTZhZGIyODk3ZDkiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJNZWJpbiBNdWhhbW1lZCIsImV4cCI6MTU4NjcxMDIyNS45NzMsImlhdCI6MTU4MTUyNjIyNX0.58NK0Kns-KXNEiMLaAtvr6nGLS6CA11oJD__RL6pUZY
 ###
 # API 
 ###
@@ -8,10 +8,10 @@ POST {{url}}/api/auth/signup
 Content-Type: application/json
 
 {
-    "name": "Nirmal KV",
-    "email": "nikhil_b180283cs@nitc.ac.in",
-    "password": "b180283cs",
-    "rollNumber" : "B180283CS"
+    "name": "Mebin Muhammed",
+    "email": "admin@mail",
+    "password": "B160352bEE",
+    "rollNumber" : "B16035b2EE"
 }
 
 ###
@@ -19,7 +19,7 @@ POST {{url}}/api/auth/signin
 Content-Type: application/json
 
 {
-    "email": "admin@anandu.net",
+    "email": "mail@anandu.net",
     "password": "password"
 }
 
@@ -48,9 +48,21 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "rollNumber": "B160094CS",
-    "message": "Intial", 
-    "amount": 1
+    "rollNumber": "B180288CS",
+    "message": "EXTRA", 
+    "amount": 1,
+    "date": 1581523219956
+}
+
+###
+POST {{url}}/api/dues/messcut
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+    "startDate": 1581523219956,
+    "endDate": 1581523219956,
+    "rollNumber": "B180288CS"
 }
 ###
 DELETE {{url}}/api/dues/delete
@@ -77,6 +89,11 @@ Content-Type: application/json
     "mess": "F"
 }
 
+
+###
+
+GET {{url}}/api/admin/list-people
+Authorization: Bearer {{adminToken}}
 ###
 GET {{url}}/api/admin/list-people-without-mess
 Authorization: Bearer {{adminToken}}
