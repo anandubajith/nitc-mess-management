@@ -60,9 +60,9 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "startDate": 1581523219956,
-    "endDate": 1581523219956,
-    "rollNumber": "B180288CS"
+    "start": 0,
+    "end": 1581523219956,
+    "rollNumber": "B180283CS"
 }
 ###
 DELETE {{url}}/api/dues/delete

@@ -29,6 +29,9 @@ export default (app: Router) => {
       // get the corresponding user and updateMess Property
       const userServiceInstance = Container.get(UserService);
       const messsage = await userServiceInstance.updateMess(req.body);
+      // insert due for all the days of month
+      const dueServiceInstance = Container.get(DueService);
+      await dueServiceInstance.setDailyDues(req.body.rollNumber, 85);
       res.send(messsage);
     },
   );

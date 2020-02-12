@@ -40,6 +40,37 @@ export default class DueService {
     const dues = await this.dueModel.find({ rollNumber: user.rollNumber });
     return { dues };
   }
+  public async setDailyDues(rollNumber: string, amount: number) {
+    const d = new Date();
+    const start = new Date(d.getFullYear(), d.getMonth(), 1).getTime();
+    const end = new Date(d.getFullYear(), d.getMonth() + 1, 0).getTime();
+    for (let i = start; i <= end; i += 86400000) {
+      let j = await this.dueModel.create({
+        rollNumber,
+        amount,
+        message: 'DailyCharge',
+        date: i,
+      });
+      // console.log(j);
+    }
+  }
+  public async setMessCut(rollNumber: string, start: number, end: number) {
+    const res = await this.dueModel.updateMany(
+      {
+        date: {
+          $gte: start,
+          $lt: end,
+        },
+        rollNumber,
+        message: 'DailyCharge',
+      },
+      { $set: { amount: 0 } },
+    );
+
+    // update and set dues to zero
+    console.log(res);
+    return 'Mess cut success';
+  }
   public async listAllDues(messName: string): Promise<{ data: any[] }> {
     // @TODO: optimize this query
     let data = await this.dueModel.aggregate([
