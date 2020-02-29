@@ -28,6 +28,8 @@ const User = new mongoose.Schema(
     password: String,
 
     salt: String,
+    hostelName: String,
+    roomNumber: String,
 
     role: {
       type: String,

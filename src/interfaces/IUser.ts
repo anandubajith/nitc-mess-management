@@ -6,6 +6,8 @@ export interface IUser {
   password: string;
   salt: string;
   mess: string;
+  hostelName: string;
+  roomNumber: string;
 }
 
 export interface IUserInputDTO {
@@ -13,4 +15,6 @@ export interface IUserInputDTO {
   email: string;
   rollNumber: string;
   password: string;
+  hostelName: string;
+  roomNumber: string;
 }

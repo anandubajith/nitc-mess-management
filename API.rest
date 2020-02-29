@@ -1,5 +1,5 @@
-@url = http://nitc-mess.herokuapp.com
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVhMTdkNjRmNjM0YTAwMDRmMmU4MzAiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJNZWJpbiBNdWhhbW1lZCIsImV4cCI6MTU4ODE0NjY0Ni4xNjMsImlhdCI6MTU4Mjk2MjY0Nn0.KdJxiUt3yiFvVka8e_GB2Xq4Z_Du-7WBktIAG8E_uIw
+@url = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVhMzE1Yjg4OTBjMDM0MDg3ZDdmYmUiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJBU0RGIiwiZXhwIjoxNTg4MTUzMTc5LjU4NywiaWF0IjoxNTgyOTY5MTc5fQ.LxgVn5frk2L0ZOMuSG9TNJqQ3FNMO30DAKq211X0AVo
 @adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTNkMTE4MDM5ZGFmODAwMDQ3YTQyOWUiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODgxNDY3NDQuOTI4LCJpYXQiOjE1ODI5NjI3NDR9.AygNJLHJTHX9FEPEUyxgn8ykjMAoXldkR8ZdOvFFFYs
 ###
 # API 
@@ -8,10 +8,12 @@ POST {{url}}/api/auth/signup
 Content-Type: application/json
 
 {
-    "name": "Mebin Muhammed",
-    "email": "admin@mail",
-    "password": "B160352bEE",
-    "rollNumber" : "B16035b2EE"
+    "name": "ASDF",
+    "email": "asdfasdf@mail",
+    "password": "asfdasdf",
+    "rollNumber" : "asdf",
+    "hostelName": "asf",
+    "roomNumber": "asdf"
 }
 
 ###

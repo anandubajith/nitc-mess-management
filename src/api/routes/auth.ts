@@ -18,6 +18,8 @@ export default (app: Router) => {
         email: Joi.string().required(),
         password: Joi.string().required(),
         rollNumber: Joi.string().required(),
+        hostelName: Joi.string().required(),
+        roomNumber: Joi.string().required(),
       }),
     }),
     async (req: Request, res: Response, next: NextFunction) => {
