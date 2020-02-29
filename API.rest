@@ -1,6 +1,6 @@
-@url = http://localhost:3000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE4MDMzLjU0OSwiaWF0IjoxNTc5OTM0MDMzfQ.ssuZf2smk8QeBXgQBVSi4AWYWclIbGwgqK3LuaezV4s
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg4MTQwNDAxLjM3LCJpYXQiOjE1ODI5NTY0MDF9.rOFWBd4F6f_K1woJw8z4OoPsxaJ1ihXkQGgBV0ZgPKI
+@url = http://nitc-mess.herokuapp.com
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVhMTdkNjRmNjM0YTAwMDRmMmU4MzAiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJNZWJpbiBNdWhhbW1lZCIsImV4cCI6MTU4ODE0NjY0Ni4xNjMsImlhdCI6MTU4Mjk2MjY0Nn0.KdJxiUt3yiFvVka8e_GB2Xq4Z_Du-7WBktIAG8E_uIw
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTNkMTE4MDM5ZGFmODAwMDQ3YTQyOWUiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODgxNDY3NDQuOTI4LCJpYXQiOjE1ODI5NjI3NDR9.AygNJLHJTHX9FEPEUyxgn8ykjMAoXldkR8ZdOvFFFYs
 ###
 # API 
 ###
@@ -30,8 +30,8 @@ POST {{url}}/api/auth/signin
 Content-Type: application/json
 
 {
-    "email": "reach2anandu@gmail.com",
-    "password": "password"
+    "email": "f_hostel@nitc.ac.in",
+    "password": "f_hostel@nitc.ac.in"
 }
 
 ###
@@ -95,7 +95,7 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "rollNumber": "B180283CS"
+    "rollNumber": "B160094CS"
 }
 
 ###
