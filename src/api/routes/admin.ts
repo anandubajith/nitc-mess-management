@@ -37,7 +37,7 @@ export default (app: Router) => {
     },
   );
 
-  route.get(
+  route.post(
     '/student/dues',
     celebrate({
       body: Joi.object({
