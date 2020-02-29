@@ -50,7 +50,7 @@ export default (app: Router) => {
     async (req: Request, res: Response) => {
       const dueServiceInstance = Container.get(DueService);
       const result = await dueServiceInstance.listDues(req.body);
-      res.send(result);
+      res.send(result.dues);
     },
   );
 
