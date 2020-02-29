@@ -89,6 +89,14 @@ Content-Type: application/json
     "mess": "F"
 }
 
+###
+GET {{url}}/api/admin/student/dues
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+    "rollNumber": "B180288CS"
+}
 
 ###
 

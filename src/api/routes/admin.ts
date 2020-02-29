@@ -9,6 +9,7 @@ import DueService from '../../services/due';
 import AuthService from '../../services/auth';
 import UserService from '../../services/user';
 import user from './user';
+import isAdmin from '../middlewares/isAdmin';
 const route = Router();
 
 export default (app: Router) => {
@@ -33,6 +34,23 @@ export default (app: Router) => {
       const dueServiceInstance = Container.get(DueService);
       await dueServiceInstance.setDailyDues(req.body.rollNumber, 85);
       res.send(messsage);
+    },
+  );
+
+  route.get(
+    '/student/dues',
+    celebrate({
+      body: Joi.object({
+        rollNumber: Joi.string().required(),
+      }),
+    }),
+    middlewares.isAuth,
+    middlewares.attachCurrentUser,
+    middlewares.isAdmin,
+    async (req: Request, res: Response) => {
+      const dueServiceInstance = Container.get(DueService);
+      const result = await dueServiceInstance.listDues(req.body.rollNumber);
+      res.send(result);
     },
   );
 
