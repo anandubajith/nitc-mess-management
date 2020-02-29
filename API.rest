@@ -1,6 +1,6 @@
 @url = http://localhost:3000
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg1MTE4MDMzLjU0OSwiaWF0IjoxNTc5OTM0MDMzfQ.ssuZf2smk8QeBXgQBVSi4AWYWclIbGwgqK3LuaezV4s
-@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTQ0MmNkMWVhZTRjNTZhZGIyODk3ZDkiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJNZWJpbiBNdWhhbW1lZCIsImV4cCI6MTU4NjcxMDIyNS45NzMsImlhdCI6MTU4MTUyNjIyNX0.58NK0Kns-KXNEiMLaAtvr6nGLS6CA11oJD__RL6pUZY
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg4MTQwNDAxLjM3LCJpYXQiOjE1ODI5NTY0MDF9.rOFWBd4F6f_K1woJw8z4OoPsxaJ1ihXkQGgBV0ZgPKI
 ###
 # API 
 ###
@@ -19,7 +19,7 @@ POST {{url}}/api/auth/signin
 Content-Type: application/json
 
 {
-    "email": "mail@anandu.net",
+    "email": "reach2anandu@gmail.com",
     "password": "password"
 }
 
@@ -95,7 +95,7 @@ Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
 {
-    "rollNumber": "B180288CS"
+    "rollNumber": "B180283CS"
 }
 
 ###

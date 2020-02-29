@@ -10,6 +10,7 @@
 ## What needs to be fixed
 
 - List dues of specific user between date,for admin
+- Accept date
 - MessContractor should be able to add student to Mess
 - add admin dataview endpoint
 - When user joins mess, add MESS_AMOUNT for all the month

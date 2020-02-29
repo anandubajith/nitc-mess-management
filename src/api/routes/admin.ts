@@ -49,7 +49,7 @@ export default (app: Router) => {
     middlewares.isAdmin,
     async (req: Request, res: Response) => {
       const dueServiceInstance = Container.get(DueService);
-      const result = await dueServiceInstance.listDues(req.body.rollNumber);
+      const result = await dueServiceInstance.listDues(req.body);
       res.send(result);
     },
   );
