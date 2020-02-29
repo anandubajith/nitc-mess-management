@@ -90,7 +90,7 @@ Content-Type: application/json
 }
 
 ###
-GET {{url}}/api/admin/student/dues
+POST {{url}}/api/admin/student/dues
 Authorization: Bearer {{adminToken}}
 Content-Type: application/json
 
