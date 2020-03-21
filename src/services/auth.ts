@@ -99,6 +99,37 @@ export default class AuthService {
     }
   }
 
+  public async SignInWithRollNumber(rollNumber: string, password: string): Promise<{ user: IUser; token: string }> {
+    const userRecord = await this.userModel.findOne({ rollNumber });
+    if (!userRecord) {
+      throw new Error('User not registered');
+    }
+    if (userRecord.role != 'user') {
+      throw new Error('User is not student');
+    }
+    /**
+     * We use verify from argon2 to prevent 'timing based' attacks
+     */
+    this.logger.silly('Checking password');
+    const validPassword = await argon2.verify(userRecord.password, password);
+    if (validPassword) {
+      this.logger.silly('Password is valid!');
+      this.logger.silly('Generating JWT');
+      const token = this.generateToken(userRecord);
+
+      const user = userRecord.toObject();
+      Reflect.deleteProperty(user, 'password');
+      Reflect.deleteProperty(user, 'salt');
+      Reflect.deleteProperty(user, 'role');
+      /**
+       * Easy as pie, you don't need passport.js anymore :)
+       */
+      return { user, token };
+    } else {
+      throw new Error('Invalid Password');
+    }
+  }
+
   private generateToken(user) {
     const today = new Date();
     const exp = new Date(today);

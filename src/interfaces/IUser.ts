@@ -8,6 +8,7 @@ export interface IUser {
   mess: string;
   hostelName: string;
   roomNumber: string;
+  role: string;
 }
 
 export interface IUserInputDTO {

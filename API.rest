@@ -1,5 +1,5 @@
 @url = http://localhost:3000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVhMzE1Yjg4OTBjMDM0MDg3ZDdmYmUiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJBU0RGIiwiZXhwIjoxNTg4MTUzMTc5LjU4NywiaWF0IjoxNTgyOTY5MTc5fQ.LxgVn5frk2L0ZOMuSG9TNJqQ3FNMO30DAKq211X0AVo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTJhZjUzODA3ZjRlYjI4ZWI1YTlhYTMiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYW5hbmR1IiwiZXhwIjoxNTg5OTg1MjM5LjAyOSwiaWF0IjoxNTg0ODAxMjM5fQ.VzcjuOYZkMYIcZrpjQ-2yGtS1yCITtU9oYyBMeuZmhs
 @adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTNkMTE4MDM5ZGFmODAwMDQ3YTQyOWUiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE1ODgxNDY3NDQuOTI4LCJpYXQiOjE1ODI5NjI3NDR9.AygNJLHJTHX9FEPEUyxgn8ykjMAoXldkR8ZdOvFFFYs
 ###
 # API 
@@ -8,12 +8,12 @@ POST {{url}}/api/auth/signup
 Content-Type: application/json
 
 {
-    "name": "ASDF",
-    "email": "asdfasdf@mail",
-    "password": "asfdasdf",
-    "rollNumber" : "asdf",
-    "hostelName": "asf",
-    "roomNumber": "asdf"
+    "name": "testuser",
+    "email": "testu@nitc.ac.in",
+    "password": "e_hostel@nitc.ac.in",
+    "rollNumber" : "EHostel",
+    "hostelName": "E Hostel",
+    "roomNumber": "0"
 }
 
 ###
@@ -24,6 +24,16 @@ Content-Type: application/json
     "email": "reach2anandu@gmail.com",
     "password": "password"
 }
+
+###
+POST {{url}}/api/auth/student/signin
+Content-Type: application/json
+
+{
+    "rollNumber": "EHostel",
+    "password": "e_hostel@nitc.ac.in"
+}
+
 
 
 ###

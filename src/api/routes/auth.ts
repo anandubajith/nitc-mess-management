@@ -59,6 +59,29 @@ export default (app: Router) => {
     },
   );
 
+  route.post(
+    '/student/signin',
+    celebrate({
+      body: Joi.object({
+        rollNumber: Joi.string().required(),
+        password: Joi.string().required(),
+      }),
+    }),
+    async (req: Request, res: Response, next: NextFunction) => {
+      const logger = Container.get('logger');
+      // logger.debug('Calling Sign-In endpoint with body: %o', req.body);
+      try {
+        const { rollNumber, password } = req.body;
+        const authServiceInstance = Container.get(AuthService);
+        const { user, token } = await authServiceInstance.SignInWithRollNumber(rollNumber, password);
+        return res.json({ user, token }).status(200);
+      } catch (e) {
+        // logger.error('🔥 error: %o', e);
+        return next(e);
+      }
+    },
+  );
+
   /**
    * @TODO Let's leave this as a place holder for now
    * The reason for a logout route could be deleting a 'push notification token'
